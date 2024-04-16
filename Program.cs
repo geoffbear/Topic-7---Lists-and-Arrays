@@ -1,9 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
-
-namespace Topic_7___Lists_and_Arrays
+﻿namespace Topic_7___Lists_and_Arrays
 {
     internal class Program
     {
@@ -18,14 +13,12 @@ namespace Topic_7___Lists_and_Arrays
             Console.WriteLine();
             Console.WriteLine("Here is your random list:");
 
-            Console.Write("[ ");
             for (int i = 0; i < 25; i++)
             {
                 randomInt = generator.Next(10, 21);
                 numbers.Add(randomInt);
                 Console.Write(numbers[i] + ", ");
             }
-            Console.WriteLine("]");
             while (menu)
             {
                 Console.WriteLine();
@@ -47,46 +40,77 @@ namespace Topic_7___Lists_and_Arrays
                     {
                         numbers.Sort();
                         Console.WriteLine();
+                        Console.WriteLine("You have chosen 1 - Sort your list");
+                        Console.WriteLine("Your list has been sorted, here it is: ");
+                        Console.WriteLine();
+                        for (int i = 0; i < 25; i++)
+                        {
+                            Console.Write(numbers[i] + ", ");
+                        }
                     }
 
                     if (menuSelection == 2)
                     {
-
+                        numbers.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 2 - Create a NEW list of random numbers");
+                        Console.WriteLine("Here is your new random list");
+                        Console.WriteLine();
+                        for (int i = 0; i < 25; i++)
+                        {
+                            randomInt = generator.Next(10, 21);
+                            numbers.Add(randomInt);
+                            Console.Write(numbers[i] + ", ");
+                        }
                     }
 
-                    if (menuSelection == 3)
+                    else if (menuSelection == 3)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 3 - Remove a specified number");
                     }
 
-                    if (menuSelection == 4)
+                    else if (menuSelection == 4)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 4 - Add a value to your list");
                     }
 
-                    if (menuSelection == 5)
+                    else if (menuSelection == 5)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 5 - Count the number of occurrences of a specified number");
                     }
 
-                    if (menuSelection == 6)
+                    else if (menuSelection == 6)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 6 - Print largest value");
                     }
 
-                    if (menuSelection == 7)
+                    else if (menuSelection == 7)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 7 - Print smallest value");
                     }
 
-                    if (menuSelection == 8)
+                    else if (menuSelection == 8)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 8 - Print the sum and average of the numbers in the list");
                     }
 
-                    if (menuSelection == 9)
+                    else if (menuSelection == 9)
                     {
-
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 9 - Determine the most frequently occurring value(s)");
+                    }
+                    else if (menuSelection == 10)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("You have chosen 10 - Quit");
+                        Console.WriteLine("Goodbye!");
+                        menu = false;
                     }
                 }
             }
