@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            int remove;
+            int add;
             List<int> numbers = new List<int>();
             bool menu = true;
             int randomInt = 0;
@@ -43,7 +45,7 @@
                         Console.WriteLine("You have chosen 1 - Sort your list");
                         Console.WriteLine("Your list has been sorted, here it is: ");
                         Console.WriteLine();
-                        for (int i = 0; i < 25; i++)
+                        for (int i = 0; i < numbers.Count; i++)
                         {
                             Console.Write(numbers[i] + ", ");
                         }
@@ -68,18 +70,49 @@
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 3 - Remove a specified number");
+                        Console.WriteLine("Which number would you like to remove?");
+
+                        while (!Int32.TryParse(Console.ReadLine(), out remove))
+                            Console.WriteLine("Invalid Numeric Input.  Try again.");
+
+
+                            for (int i = 0; i < numbers.Count; i++)
+                            {
+                                numbers.Remove(remove);
+                            }
+
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            Console.Write(numbers[i] + ", ");
+                        }
                     }
 
                     else if (menuSelection == 4)
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 4 - Add a value to your list");
+                        Console.WriteLine("Which value would you like to add?");
+                        while (!Int32.TryParse(Console.ReadLine(), out add))
+                            Console.WriteLine("Invalid Numeric Input.  Try again.");
+
+
+                        numbers.Add(add);
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            Console.Write(numbers[i] + ", ");
+                        }
                     }
 
                     else if (menuSelection == 5)
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 5 - Count the number of occurrences of a specified number");
+                        Console.WriteLine("Which number would you like to count?");
+                        int occur = Convert.ToInt32(Console.ReadLine());
+                        //Console.WriteLine("" + );
+                    
+                    
+                    
                     }
 
                     else if (menuSelection == 6)
