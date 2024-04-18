@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            int remove;
-            int add;
+            int remove, add, occur;
             List<int> numbers = new List<int>();
             bool menu = true;
             int randomInt = 0;
@@ -71,10 +70,8 @@
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 3 - Remove a specified number");
                         Console.WriteLine("Which number would you like to remove?");
-
                         while (!Int32.TryParse(Console.ReadLine(), out remove))
                             Console.WriteLine("Invalid Numeric Input.  Try again.");
-
 
                             for (int i = 0; i < numbers.Count; i++)
                             {
@@ -95,12 +92,10 @@
                         while (!Int32.TryParse(Console.ReadLine(), out add))
                             Console.WriteLine("Invalid Numeric Input.  Try again.");
 
-
                         numbers.Add(add);
                         for (int i = 0; i < numbers.Count; i++)
-                        {
                             Console.Write(numbers[i] + ", ");
-                        }
+                        
                     }
 
                     else if (menuSelection == 5)
@@ -108,8 +103,10 @@
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 5 - Count the number of occurrences of a specified number");
                         Console.WriteLine("Which number would you like to count?");
-                        int occur = Convert.ToInt32(Console.ReadLine());
-                        //Console.WriteLine("" + );
+                        while (!Int32.TryParse(Console.ReadLine(), out occur))
+                            Console.WriteLine("Invalid Numeric Input.  Try again.");
+                        
+                        Console.WriteLine("");
                     
                     
                     
