@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            int remove, add, occur;
+            int remove, add, occur, occurCount = 0;
             List<int> numbers = new List<int>();
             bool menu = true;
             int randomInt = 0;
@@ -105,23 +105,51 @@
                         Console.WriteLine("Which number would you like to count?");
                         while (!Int32.TryParse(Console.ReadLine(), out occur))
                             Console.WriteLine("Invalid Numeric Input.  Try again.");
-                        
-                        Console.WriteLine("");
-                    
-                    
-                    
+
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            if (numbers[i] == occur)
+                            {
+                                occurCount++;
+                            }
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine("The number " + occur + " appears " + occurCount + " times in your list.");
+                        occurCount = 0;
                     }
 
                     else if (menuSelection == 6)
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 6 - Print largest value");
+                        int biggestNumber = numbers[0];
+
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            if (numbers[i] > biggestNumber)
+                            {
+                                biggestNumber = numbers[i];
+                            }
+                        }
+                        Console.WriteLine("The largest number in your list is " + biggestNumber + "." );
                     }
 
                     else if (menuSelection == 7)
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 7 - Print smallest value");
+                        int smallestNumber = numbers[0];
+
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            if (numbers[i] > smallestNumber)
+                            {
+                                smallestNumber = numbers[i];
+                            }
+                        }
+                        Console.WriteLine("The largest number in your list is " + smallestNumber + ".");
+
+
                     }
 
                     else if (menuSelection == 8)
