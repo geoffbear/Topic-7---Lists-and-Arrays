@@ -1,4 +1,6 @@
-﻿namespace Topic_7___Lists_and_Arrays
+﻿using System.Net.Mime;
+
+namespace Topic_7___Lists_and_Arrays
 {
     internal class Program
     {
@@ -32,7 +34,7 @@
                 Console.WriteLine("6 - Print largest value");
                 Console.WriteLine("7 - Print smallest value");
                 Console.WriteLine("8 - Print the sum and average of the numbers in the list");
-                Console.WriteLine("9 - Determine the most frequently occurring value(s)");
+                Console.WriteLine("9 - Determine the median value");
                 Console.WriteLine("10 - Quit");
 
                 if (int.TryParse(Console.ReadLine().Trim(), out menuSelection))
@@ -162,14 +164,31 @@
                             sum = numbers[i] + sum;
                         }
                         Console.WriteLine("The sum of your list is " + sum + ".");
+                        Console.WriteLine("The average of your list is " + (sum / numbers.Count) + ".");
                         sum = 0;
-
                     }
 
                     else if (menuSelection == 9)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("You have chosen 9 - Determine the most frequently occurring value(s)");
+                        Console.WriteLine("You have chosen 9 - Determine the median value");
+
+                        if (numbers.Count % 2 == 1)
+                        {
+                            numbers.Sort();
+                            int median = numbers.Count / 2;
+                            Console.WriteLine("Your median is " + numbers[median] + ".");
+                        }
+                        else if (numbers.Count % 2 == 0)
+                        {
+
+                        }
+
+
+
+
+
+
                     }
                     else if (menuSelection == 10)
                     {
