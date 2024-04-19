@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            int remove, add, occur, occurCount = 0;
+            int remove, add, occur, occurCount = 0, sum = 0, average = 0;
             List<int> numbers = new List<int>();
             bool menu = true;
             int randomInt = 0;
@@ -73,10 +73,10 @@
                         while (!Int32.TryParse(Console.ReadLine(), out remove))
                             Console.WriteLine("Invalid Numeric Input.  Try again.");
 
-                            for (int i = 0; i < numbers.Count; i++)
-                            {
-                                numbers.Remove(remove);
-                            }
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            numbers.Remove(remove);
+                        }
 
                         for (int i = 0; i < numbers.Count; i++)
                         {
@@ -95,7 +95,7 @@
                         numbers.Add(add);
                         for (int i = 0; i < numbers.Count; i++)
                             Console.Write(numbers[i] + ", ");
-                        
+
                     }
 
                     else if (menuSelection == 5)
@@ -131,7 +131,7 @@
                                 biggestNumber = numbers[i];
                             }
                         }
-                        Console.WriteLine("The largest number in your list is " + biggestNumber + "." );
+                        Console.WriteLine("The largest number in your list is " + biggestNumber + ".");
                     }
 
                     else if (menuSelection == 7)
@@ -156,6 +156,14 @@
                     {
                         Console.WriteLine();
                         Console.WriteLine("You have chosen 8 - Print the sum and average of the numbers in the list");
+                        Console.WriteLine();
+                        for (int i = 0; i < numbers.Count; i++)
+                        {
+                            sum = numbers[i] + sum;
+                        }
+                        Console.WriteLine("The sum of your list is " + sum + ".");
+                        sum = 0;
+
                     }
 
                     else if (menuSelection == 9)
