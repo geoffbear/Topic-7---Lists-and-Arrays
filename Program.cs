@@ -186,6 +186,7 @@ namespace Topic_7___Lists_and_Arrays
                             Console.WriteLine("Your median is " + ((numbers[median] + numbers[median-1]) / 2) + ".");
                         }
                     }
+
                     else if (menuSelection == 10)
                     {
                         Console.WriteLine();
