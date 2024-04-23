@@ -181,14 +181,10 @@ namespace Topic_7___Lists_and_Arrays
                         }
                         else if (numbers.Count % 2 == 0)
                         {
-
+                            numbers.Sort();
+                            int median = numbers.Count / 2;
+                            Console.WriteLine("Your median is " + ((numbers[median] + numbers[median-1]) / 2) + ".");
                         }
-
-
-
-
-
-
                     }
                     else if (menuSelection == 10)
                     {
